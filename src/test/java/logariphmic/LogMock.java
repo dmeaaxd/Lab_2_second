@@ -52,7 +52,7 @@ public class LogMock {
     }
 
     public static LogCalculator getLog3Mock() {
-        LogBaseCalculator log3 = mock(LogBaseCalculator.class);
+        LogCalculator log3 = mock(LogCalculator.class);
 
         when(log3.calc(Mockito.eq(1 * PI / 6))).thenReturn(-0.5889517075792716);
         when(log3.calc(Mockito.eq(1 * PI / 4))).thenReturn(-0.21988146115072904);
@@ -85,7 +85,7 @@ public class LogMock {
     }
 
     public static LogCalculator getLog5Mock() {
-        LogBaseCalculator log5 = mock(LogBaseCalculator.class);
+        LogCalculator log5 = mock(LogCalculator.class);
 
         when(log5.calc(Mockito.eq(1 * PI / 6))).thenReturn(-0.40202208384670945);
         when(log5.calc(Mockito.eq(1 * PI / 4))).thenReturn(-0.15009244743411718);
@@ -115,6 +115,39 @@ public class LogMock {
         when(log5.calc(NaN)).thenReturn(NaN);
 
         return log5;
+    }
+
+    public static LogCalculator getLog10Mock() {
+        LogCalculator log10 = mock(LogCalculator.class);
+
+        when(log10.calc(Mockito.eq(1 * PI / 6))).thenReturn(-0.28100137769);
+        when(log10.calc(Mockito.eq(1 * PI / 4))).thenReturn(-0.10491011863);
+        when(log10.calc(Mockito.eq(1 * PI / 3))).thenReturn(0.02002861797);
+        when(log10.calc(Mockito.eq(2 * PI / 3))).thenReturn(0.32105861363);
+        when(log10.calc(Mockito.eq(3 * PI / 4))).thenReturn(0.37221113608);
+        when(log10.calc(Mockito.eq(5 * PI / 6))).thenReturn(0.41796862664);
+        when(log10.calc(Mockito.eq(7 * PI / 6))).thenReturn(0.56409666232);
+        when(log10.calc(Mockito.eq(5 * PI / 4))).thenReturn(0.5940598857);
+        when(log10.calc(Mockito.eq(4 * PI / 3))).thenReturn(0.6220886093);
+        when(log10.calc(Mockito.eq(5 * PI / 3))).thenReturn(0.71899862231);
+        when(log10.calc(Mockito.eq(7 * PI / 4))).thenReturn(0.86512665798);
+        when(log10.calc(Mockito.eq(11 * PI / 6))).thenReturn(0.76039130746);
+        when(log10.calc(Mockito.eq(PI))).thenReturn(0.49714987269);
+        when(log10.calc(Mockito.eq(2 * PI))).thenReturn(0.79817986835);
+        when(log10.calc(Mockito.eq(1 * PI / 2))).thenReturn(0.19611987703);
+
+        when(log10.calc(Mockito.eq(-1 * PI / 4))).thenReturn(NaN);
+        when(log10.calc(Mockito.eq(-3 * PI / 4))).thenReturn(NaN);
+        when(log10.calc(Mockito.eq(-5 * PI / 4))).thenReturn(NaN);
+        when(log10.calc(Mockito.eq(-7 * PI / 4))).thenReturn(NaN);
+        when(log10.calc(Mockito.eq(-1 * PI / 2))).thenReturn(NaN);
+        when(log10.calc(Mockito.eq(-PI ))).thenReturn(NaN);
+
+        when(log10.calc(POSITIVE_INFINITY)).thenReturn(POSITIVE_INFINITY);
+        when(log10.calc(Double.NEGATIVE_INFINITY)).thenReturn(NaN);
+        when(log10.calc(NaN)).thenReturn(NaN);
+
+        return log10;
     }
 
 }
