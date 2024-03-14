@@ -2,7 +2,7 @@ package org.example;
 
 public abstract class Calculator {
 
-    private double precision;
+    protected double precision;
 
     public Calculator(double precision) {
         this.precision = precision;
