@@ -15,7 +15,7 @@ public class TrigonomMock {
     public static SinCalculator getSinMock() {
         SinCalculator sin = mock(SinCalculator.class);
 
-        when(sin.calc(Mockito.eq(0))).thenReturn(0.0);
+        when(sin.calc(Mockito.eq(0.0))).thenReturn(0.0);
         when(sin.calc(Mockito.eq(1 * PI / 6))).thenReturn(0.49999999999999994);
         when(sin.calc(Mockito.eq(1 * PI / 4))).thenReturn(0.7071067811865475);
         when(sin.calc(Mockito.eq(1 * PI / 3))).thenReturn(0.8660254037844386);
@@ -49,7 +49,7 @@ public class TrigonomMock {
     public static CosCalculator getCosMock() {
         CosCalculator cos = mock(CosCalculator.class);
 
-        when(cos.calc(Mockito.eq(0))).thenReturn(1.0);
+        when(cos.calc(Mockito.eq(0.0))).thenReturn(1.0);
         when(cos.calc(Mockito.eq(1 * PI / 6))).thenReturn(0.8660254037844387);
         when(cos.calc(Mockito.eq(1 * PI / 4))).thenReturn(0.7071067811865476);
         when(cos.calc(Mockito.eq(1 * PI / 3))).thenReturn(0.5000000000000001);
@@ -82,6 +82,7 @@ public class TrigonomMock {
     public static TanCalculator getTanMock() {
         TanCalculator tan = mock(TanCalculator.class);
 
+        when(tan.calc(Mockito.eq(0.0))).thenReturn(0.0);
         when(tan.calc(Mockito.eq(PI / 2))).thenReturn(Double.POSITIVE_INFINITY);
         when(tan.calc(Mockito.eq(- PI / 2))).thenReturn(Double.POSITIVE_INFINITY);
         when(tan.calc(Mockito.eq(PI))).thenReturn(0.0);
@@ -116,6 +117,7 @@ public class TrigonomMock {
     public static CotCalculator getCotMock() {
         CotCalculator cot = mock(CotCalculator.class);
 
+        when(cot.calc(Mockito.eq(0.0))).thenReturn(Double.POSITIVE_INFINITY);
         when(cot.calc(Mockito.eq(PI / 2))).thenReturn(0.0);
         when(cot.calc(Mockito.eq(- PI / 2))).thenReturn(0.0);
         when(cot.calc(Mockito.eq(PI))).thenReturn(NaN);

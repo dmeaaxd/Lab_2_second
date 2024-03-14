@@ -4,7 +4,7 @@ import org.example.CsvHandler;
 import org.example.trigonometric.CosCalculator;
 import org.junit.AfterClass;
 import org.junit.Test;
-import org.testng.annotations.BeforeClass;
+import org.junit.BeforeClass;
 
 import static org.junit.Assert.assertEquals;
 

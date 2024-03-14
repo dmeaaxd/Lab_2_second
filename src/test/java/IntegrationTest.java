@@ -11,10 +11,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import trigonometric.TrigonomMock;
 
-import javax.swing.text.DefaultEditorKit;
-
-import static org.junit.Assert.assertEquals;
-
 public class IntegrationTest {
     private static final double DELTA = 1e-10;
 
@@ -22,7 +18,7 @@ public class IntegrationTest {
     @CsvSource(value = {
             "0, Infinity",
             "3.1415926535897932, 0.211048642682738188",
-            "-1.57079632679489, 0"
+            "-0.78539816339744830961, 1"
     })
     public void testFunctionSystem_mocAll(double x, double res) {
         FunctionsSystem function = new FunctionsSystem(DELTA, LogMock.getLnMock(), LogMock.getLog3Mock(), LogMock.getLog5Mock(), LogMock.getLog10Mock(), TrigonomMock.getSinMock(), TrigonomMock.getCosMock(),TrigonomMock.getTanMock(), TrigonomMock.getCotMock());
@@ -34,7 +30,7 @@ public class IntegrationTest {
     @CsvSource(value = {
             "0, Infinity",
             "3.1415926535897932, 0.211048642682738188",
-            "-1.57079632679489, 0"
+            "-0.78539816339744830961, 1"
     })
     public void testFunctionSystem_mocLog(double x, double res) {
         FunctionsSystem function = new FunctionsSystem(DELTA,
@@ -54,7 +50,7 @@ public class IntegrationTest {
     @CsvSource(value = {
             "0, Infinity",
             "3.1415926535897932, 0.211048642682738188",
-            "-1.57079632679489, 0"
+            "-0.78539816339744830961, 1"
     })
     public void testFunctionSystem_mocTringon(double x, double res) {
         FunctionsSystem function = new FunctionsSystem(DELTA,

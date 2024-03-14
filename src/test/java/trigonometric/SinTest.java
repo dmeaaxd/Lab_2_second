@@ -3,8 +3,8 @@ package trigonometric;
 import org.example.CsvHandler;
 import org.example.trigonometric.SinCalculator;
 import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.testng.annotations.BeforeClass;
 
 import static org.junit.Assert.assertEquals;
 

@@ -16,7 +16,7 @@ public class SystemTest {
     @CsvSource(value = {
             "0, Infinity",
             "3.1415926535897932, 0.211048642682738188",
-            "-1.57079632679489, 0"
+            "-0.78539816339744830961, 1"
     })
     public void testFunctionSystem(double x, double res) {
         FunctionsSystem function = new FunctionsSystem(DELTA,
