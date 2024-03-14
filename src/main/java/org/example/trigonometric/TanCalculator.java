@@ -1,6 +1,7 @@
 package org.example.trigonometric;
 
 import org.example.Calculator;
+import org.example.CsvHandler;
 
 public class TanCalculator extends Calculator {
     private final SinCalculator sin;
@@ -13,6 +14,8 @@ public class TanCalculator extends Calculator {
     }
 
     public double calc(double x) {
-        return sin.calc(x) / cos.calc(x);
+        double result = sin.calc(x) / cos.calc(x);
+        CsvHandler.writeToCsv("tan", x, result);
+        return result;
     }
 }

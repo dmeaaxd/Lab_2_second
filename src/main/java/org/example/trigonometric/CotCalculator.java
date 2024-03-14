@@ -1,6 +1,7 @@
 package org.example.trigonometric;
 
 import org.example.Calculator;
+import org.example.CsvHandler;
 
 public class CotCalculator extends Calculator {
     private final SinCalculator sin;
@@ -13,6 +14,8 @@ public class CotCalculator extends Calculator {
     }
 
     public double calc(double x) {
-        return cos.calc(x) / sin.calc(x);
+        double result = cos.calc(x) / sin.calc(x);
+        CsvHandler.writeToCsv("cot", x, result);
+        return result;
     }
 }
