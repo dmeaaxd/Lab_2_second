@@ -1,6 +1,8 @@
 package org.example.trigonometric;
 
-public class TanCalculator {
+import org.example.Calculator;
+
+public class TanCalculator extends Calculator {
     private final SinCalculator sin;
     private final CosCalculator cos;
 
@@ -10,8 +12,7 @@ public class TanCalculator {
         this.cos = cos;
     }
 
-    public double calculate(double x) {
-        double tan = sin.calc(x) / cos.calc(x);
-        return Double.isFinite(tan) ? tan : Double.POSITIVE_INFINITY;
+    public double calc(double x) {
+        return sin.calc(x) / cos.calc(x);
     }
 }

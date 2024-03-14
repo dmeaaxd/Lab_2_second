@@ -1,6 +1,8 @@
 package org.example.trigonometric;
 
-public class CotCalculator {
+import org.example.Calculator;
+
+public class CotCalculator extends Calculator {
     private final SinCalculator sin;
     private final CosCalculator cos;
 
@@ -10,8 +12,7 @@ public class CotCalculator {
         this.cos = cos;
     }
 
-    public double calculate(double x) {
-        double cot = cos.calc(x) / sin.calc(x);
-        return Double.isFinite(cot) ? cot : Double.POSITIVE_INFINITY;
+    public double calc(double x) {
+        return cos.calc(x) / sin.calc(x);
     }
 }
