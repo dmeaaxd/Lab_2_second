@@ -24,8 +24,6 @@ public class SystemTest {
                 new LogCalculator(DELTA, new LnCalculator(DELTA),3),
                 new LogCalculator(DELTA, new LnCalculator(DELTA),5),
                 new LogCalculator(DELTA, new LnCalculator(DELTA),10),
-                new SinCalculator(DELTA),
-                new CosCalculator(DELTA),
                 new TanCalculator(DELTA, new SinCalculator(DELTA), new CosCalculator(DELTA)),
                 new CotCalculator(DELTA, new SinCalculator(DELTA), new CosCalculator(DELTA)));
         double actual = function.calc(x);

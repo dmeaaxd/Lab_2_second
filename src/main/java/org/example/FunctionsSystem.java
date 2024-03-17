@@ -15,7 +15,7 @@ public class FunctionsSystem extends Calculator{
     private final TanCalculator tan;
     private final CotCalculator cot;
 
-    public FunctionsSystem(double precision, LnCalculator ln, LogCalculator log3, LogCalculator log5, LogCalculator log10, SinCalculator sin, CosCalculator cos, TanCalculator tan, CotCalculator cot) {
+    public FunctionsSystem(double precision, LnCalculator ln, LogCalculator log3, LogCalculator log5, LogCalculator log10, TanCalculator tan, CotCalculator cot) {
         super(precision);
         this.ln = ln;
         this.log3 = log3;

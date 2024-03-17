@@ -21,7 +21,13 @@ public class IntegrationTest {
             "-0.78539816339744830961, 1"
     })
     public void testFunctionSystem_mocAll(double x, double res) {
-        FunctionsSystem function = new FunctionsSystem(DELTA, LogMock.getLnMock(), LogMock.getLog3Mock(), LogMock.getLog5Mock(), LogMock.getLog10Mock(), TrigonomMock.getSinMock(), TrigonomMock.getCosMock(),TrigonomMock.getTanMock(), TrigonomMock.getCotMock());
+        FunctionsSystem function = new FunctionsSystem(DELTA,
+                LogMock.getLnMock(),
+                LogMock.getLog3Mock(),
+                LogMock.getLog5Mock(),
+                LogMock.getLog10Mock(),
+                TrigonomMock.getTanMock(),
+                TrigonomMock.getCotMock());
         double actual = function.calc(x);
         Assertions.assertEquals(res, actual, DELTA);
     }
@@ -38,8 +44,6 @@ public class IntegrationTest {
                 LogMock.getLog3Mock(),
                 LogMock.getLog5Mock(),
                 LogMock.getLog10Mock(),
-                new SinCalculator(DELTA),
-                new CosCalculator(DELTA),
                 new TanCalculator(DELTA, new SinCalculator(DELTA), new CosCalculator(DELTA)),
                 new CotCalculator(DELTA, new SinCalculator(DELTA), new CosCalculator(DELTA)));
         double actual = function.calc(x);
@@ -58,8 +62,6 @@ public class IntegrationTest {
                 new LogCalculator(DELTA, new LnCalculator(DELTA),3),
                 new LogCalculator(DELTA, new LnCalculator(DELTA),5),
                 new LogCalculator(DELTA, new LnCalculator(DELTA),10),
-                TrigonomMock.getSinMock(),
-                TrigonomMock.getCosMock(),
                 TrigonomMock.getTanMock(),
                 TrigonomMock.getCotMock());
         double actual = function.calc(x);
